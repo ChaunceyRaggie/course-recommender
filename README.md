@@ -1,130 +1,93 @@
-# Project: Movie Recommender System Using Machine Learning!
-
-<img src="demo/6.jpeg" alt="workflow" width="70%">
-
-Recommendation systems are becoming increasingly important in today’s extremely busy world. People are always short on time with the myriad tasks they need to accomplish in the limited 24 hours. Therefore, the recommendation systems are important as they help them make the right choices, without having to expend their cognitive resources.
-
-The purpose of a recommendation system basically is to search for content that would be interesting to an individual. Moreover, it involves a number of factors to create personalised lists of useful and interesting content specific to each user/individual. Recommendation systems are Artificial Intelligence based algorithms that skim through all possible options and create a customized list of items that are interesting and relevant to an individual. These results are based on their profile, search/browsing history, what other people with similar traits/demographics are watching, and how likely are you to watch those movies. This is achieved through predictive modeling and heuristics with the data available.
-
-# Types of Recommendation System :
-
-### 1 ) Content Based :
-
-- Content-based systems, which use characteristic information and takes item attriubutes into consideration .
-
-- Twitter , Youtube .
-
-- Which music you are listening , what singer are you watching . Form embeddings for the features .
-	
-- User specific actions or similar items reccomendation .
-	
-- It will create a vector of it .
-	
-- These systems make recommendations using a user's item and profile features. They hypothesize that if a user was interested in an item in the past, they will once again be interested in it in the future
-	
-- One issue that arises is making obvious recommendations because of excessive specialization (user A is only interested in categories B, C, and D, and the system is not able to recommend items outside those categories, even though they could be interesting to them).
-
-### 2 ) Collaborative Based :
-		
-- Collaborative filtering systems, which are based on user-item interactions.
-	
-- Clusters of users with same ratings , similar users .
-	
-- Book recommendation , so use cluster mechanism .
-	
-- We take only one parameter , ratings or comments .
-	
-- In short, collaborative filtering systems are based on the assumption that if a user likes item A and another user likes the same item A as well as another item, item B, the first user could also be interested in the second item . 
-	
-- Issues are :
-
-	- User-Item nXn matrix , so computationally expensive .
-
-	- Only famous items will get reccomended .
-
-	- New items might not get reccomended at all .   
-
-### 3 ) Hybrid Based :
-	
-- Hybrid systems, which combine both types of information with the aim of avoiding problems that are generated when working with just one kind.
-
-- Combination of both and used now a days .
-
-- Uses : word2vec , embedding .           
-
-# About this project:
-
-This is a streamlit web application that can recommend various kinds of similar movies based on an user interest.
-here is a demo,
-
-* [Click here to run it live on server](https://movie-recommeder-system.herokuapp.com/)
+# Course-Recommender-System-Capstone
+<i>Asia Paige, Chauncey Raggie, Thomas James</i>
 
 
-# Demo:
+When you’re thinking about switching careers or up-skilling to move up in your industry, it can be overwhelming identifying the skills needed for a desired job and searching for courses that will help give you those skills. Usually, this process requires multiple searches across multiple websites which leads to multiple tabs. Our project aims to address this problem by creating a recommendation system that takes job titles as the input and recommends relevant courses that may help an individual gain skills as the output.
 
-<img src="demo/1.png" alt="workflow" width="70%">
+The literature we reviewed presented attempts using skilled based approaches i.e. by taking job skills as the input and recommending courses as the output.  Our goal in this project is to see if it’s possible to take job titles that may not have direct correlation to course summaries like skills do, and recommend relevant courses. This project is an information retrieval task.
 
-<img src="demo/2.png" alt="workflow" width="70%">
+### Table of Contents
+- [Introduction](#Introduction)
+- [Data Sources](#Data)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributing](#Contributing)
+- [License](#License)
 
-<img src="demo/3.png" alt="workflow" width="70%">
+### Introduction
+In this project, we aim to analyze the data to answer a specific research question or solve a specific problem. We used various data science techniques and tools to collect, process, and analyze data. The findings of the project are documented in a Jupyter Notebook, which is included in this repository.
+
+### Data Sources
+Source 1: Job description data from the [O*NET 27.2 Database](https://www.onetcenter.org/database.html#task). Original source: [the U.S. Department of Labor, Employment and Training Administration](https://www.dol.gov/agencies/eta)
+
+Features
+
+- O*NET-SOC Code: Occupation Code 
+- Title: Occupation title
+- Task ID:	Identifies each task
+- Task: Task statement associated with an occupation
+- Task Type:	“Core” or “Supplemental”
+- Incumbents Responding: Number of incumbents providing task information
+- Date:	Date when data was updated
+- Domain Source:	Source of the data
+
+Source 2: Udemy Course Enrollment Information [Dataset](https://www.kaggle.com/datasets/songseungwon/2020-udemy-courses-dataset?select=udemy_finance.csv) from Kaggle
+
+This data set contains data for about 42K(42,432) courses based on 9 categories. The data was collected using a Python scraper coded with selenium, bs4, etc.
+The 9 course categories are; Business, Design, Finance, Marketing, Productivity, Photography, Lifestyle, Music and Tech. 
+
+Features
+
+- Index : Index of rows
+- Title : Title of Course
+- Summary : Summary information of the course
+- Enrollment : The cumulative number of students in the course
+- Stars : The number of ratings (reviews) of the course
+- Rating : Average rating for the course
+- Link : Link to detail page of the course
+
+## Recommended System Requirements
+To run this project, you'll need the following:
+
+- Python 3.6 or higher
+- 32GB of RAM or more
+
+### Installation
+- Clone the repository
+- Install the required packages using pip install -r requirements.txt
+
+You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html)
+
+If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. 
+
+### How to run the app locally
+- run 'Pickle File Creation Instructions.ipynb' notebook to create pickle file
+- run rec_app_2.py in IDE of your choice
+
+### Contributing
+We welcome contributions from anyone. To report issues or request new features, please use the issue tracker. If you'd like to contribute code, please fork the repository and submit a pull request.
+
+### Developer Notes 
+- Make sure to push into the `dev` branch only.
+- `git checkout dev` (will switch your active branch to be dev locally)
+- Before pushing your code with the downloaded data, make sure to run `git pull`. (this will download the latest changes locally for you, and avoid merge conflicts)
+- `git commit -m "<a few words on what is pushed>"`
+- `git add .` adds all in all the changes
+- `git push` to push the code into the `dev` branch repository
+
+### License
+This project is licensed under the MIT License.
+
+### Project Structure 
+
+<p align=center>
+    <img src="./images/structure.PNG">
+</p>
+
+### Course Recommender application UI
+
+<p align=center>
+    <img src="./images/front-end.PNG">
+</p>
 
 
-# Dataset has been used:
-
-* [Dataset link](https://www.kaggle.com/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies.csv)
-
-# Concept used to build the model.pkl file : cosine_similarity
-
-1 . Cosine Similarity is a metric that allows you to measure the similarity of the documents.
-
-2 . In order to demonstrate cosine similarity function we need vectors. Here vectors are numpy array.
-
-3 . Finally, Once we have vectors, We can call cosine_similarity() by passing both vectors. It will calculate the cosine similarity between these two.
-
-4 . It will be a value between [0,1]. If it is 0 then both vectors are complete different. But in the place of that if it is 1, It will be completely similar.
-
-5 . For more details , check URL : https://www.learndatasci.com/glossary/cosine-similarity/
-
-# How to run?
-### STEPS:
-
-Clone the repository
-
-```bash
-https://github.com/entbappy/Movie-Recommender-System-Using-Machine-Learning.git
-```
-### STEP 01- Create a conda environment after opening the repository
-
-```bash
-conda create -n movie python=3.7.10 -y
-```
-
-```bash
-conda activate movie
-```
-
-
-### STEP 02- install the requirements
-```bash
-pip install -r requirements.txt
-```
-
-
-```bash
-#run this file to generate the models
-
-Movie Recommender System Data Analysis.ipynb
-```
-
-Now run,
-```bash
-streamlit run app.py
-```
-
-
-```bash
-Author: Bappy Ahmed
-Data Scientist
-Email: entbappy73@gmail.com
-
-```
